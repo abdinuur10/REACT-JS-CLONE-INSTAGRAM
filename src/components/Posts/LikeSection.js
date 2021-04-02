@@ -19,17 +19,17 @@ const LikeSection = props => {
     
           {/* Create an onClick function and pass the 'incrementLikes' property */}
 
-        <div className='like-section-wrapper'>
+        <div className='like-section-wrapper' onClick={incrementLikes}>
           <FontAwesomeIcon icon={faHeart} />
         </div>
         <div className='like-section-wrapper'>
-          <FontAwesomeIcon icon={faComment} />
+          <FontAwesomeIcon icon={faComment} onClick={incrementLikes}/>
         </div>
       </div>
     
           {/* Change this hard coded likes to like from props */}
 
-      <p className='like-number'>100 likes</p>
+      <p className='like-number'>{numberOfLikes} likes</p>
     </div>
   );
 };

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Comments from '../Comments/Comments';
 import LikeSection from './LikeSection';
 import PostHeader from './PostHeader';
+import Posts from './Posts';
 
 const Post = props => {
   // 🔥 Make sure the parent of Post is passing the right props!
@@ -15,6 +16,7 @@ const Post = props => {
   
   const incrementLikes = () => {
     setLikes(likes + 1);
+  
   };
 
   return (
@@ -31,7 +33,7 @@ const Post = props => {
         />
       </div>
       {/* Is LikeSection getting all the props it needs to work correctly? */}
-      <LikeSection incrementLikes={incrementLikes} />
+      <LikeSection incrementLikes={incrementLikes} numberOfLikes={likes}/>
       {/* Comments also wants its props! */}
       <Comments />
     </div>
